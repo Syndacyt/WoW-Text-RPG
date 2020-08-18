@@ -1,16 +1,8 @@
 import sqlite3
-
 from src import constants
 
 
 def create_table(cursor):
-    """
-    This function is used to initially create the table. It should not be called again unless the database is being
-    reset. Should only be called in database.py database_setup().
-
-    :param cursor: sqlite3 cursor object
-    """
-
     try:
         cursor.execute(""" CREATE TABLE IF NOT EXISTS classes (
             classes_id INTEGER PRIMARY KEY,
@@ -30,7 +22,3 @@ def insert_classes(cursor):
     for key in constants.CLASS_RACE_IDS:
         for value in constants.CLASS_RACE_IDS[key]:
             cursor.execute(query, (key, value))
-
-
-
-

@@ -1,20 +1,8 @@
-"""
-This file is called at the start of the main function to create all tables
-required. The database is being used as a safe way to store player data, loot tables
-etc. Current Tables include:
-    - Characters
-    - Currency
-    - Races
-    - Classes
-    - Specializations
-"""
-
 import sqlite3
-
 from src.database.models.characters_model import characters_model
 from src.database.models.currency_model import currency_model
-from src.database.models.races_model import races_model
 
+from src.database.models.races_model import races_model
 from src.database.models.classes_model import classes_model
 
 
@@ -38,4 +26,3 @@ def database_setup(database_name):
 
     # Close the connection
     connection.close()
-
